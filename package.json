@@ -1,7 +1,7 @@
 {
   "name": "grunt-docpad",
   "description": "Execute Docpad commands as Grunt tasks",
-  "version": "0.1.1b",
+  "version": "0.1.2",
   "homepage": "https://github.com/taras/grunt-docpad",
   "author": {
     "name": "Taras Mankovski",
