@@ -21,10 +21,14 @@ module.exports = function(grunt) {
     var docpadConfig = require( './docpad' );
 
     docpad.createInstance( docpadConfig, function( err, docpadInstance ) {
-      if ( err ) return grunt.fail.warn( err.stack );
+      if ( err ) {
+        return grunt.fail.warn( err.stack );
+      }
 
       docpadInstance.action( 'generate', function ( err, result ) {
-        if ( err ) return grunt.log.error( err.stack );
+        if ( err ) {
+          return grunt.log.error( err.stack );
+        }
 
         grunt.log.writeln( "Generate executed successfully" );
       });
