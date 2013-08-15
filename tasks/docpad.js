@@ -13,7 +13,7 @@ var docpad = require( 'docpad' );
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('generate', '(re)generates your project', function() {
+  grunt.registerMultiTask('docpad:generate', '(re)generates your project', function() {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({});
