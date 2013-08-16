@@ -16,7 +16,7 @@ var
 module.exports = function(grunt) {
 
   function getDocpadInstance( callback ) {
-    var docpadInstance = grunt.config.get( 'docpadInstance' );
+    var docpadInstance = grunt.config.getRaw( 'docpad:instance' );
     if ( docpadInstance ) {
       grunt.log.debug( "Reusing existing Docpad Instance" );
       callback( docpadInstance );
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
         if ( err ) {
           return grunt.fail.warn( err.stack );
         }
-        grunt.config.set( "docpadInstance", docpadInstance );
+        grunt.config.set( 'docpad:instance', docpadInstance );
         grunt.log.debug( "Created an instance of Docpad." );
         callback( docpadInstance );
       });
@@ -51,7 +51,6 @@ module.exports = function(grunt) {
           done( false );
           return;
         }
-        grunt.log.writeln( "Generate executed successfully" );
         done();
       });
     });
@@ -71,7 +70,8 @@ module.exports = function(grunt) {
           done( false );
           return;
         }
-        grunt.log.writeln( "Watching for Docpad file changes..." );
+        grunt.log.debug( "Grunt watching");
+        done();
       });
     });
   })
